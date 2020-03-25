@@ -1,0 +1,66 @@
+/**
+ * Rota / Recurso
+ * 
+ */
+
+ /*Métodos HTTP
+ *
+  * GET: Buscar uma informação do back-end, por exemplo trazer todos os alunos.
+  * POST: Criar uma informação no back-end, por exemplo criar um novo usuario.
+  * PUT: Alterar uma informação no back-end, por exemplo alterar o nome de um user.
+  * DELETE: Deletar uma informação no back-end, por exemplo deletar um user.
+  * 
+  */
+
+
+  /**
+   * Tipos de Parametros:
+   * 
+   * Query Params: Parâmetros nomeados enviados na rota após o símbolo de ? usados em (Filtros, paginação..)
+   * Route Params: Parâmetros utilizados para identificar recursos.
+   * Request Body: Corpo da requisição, utilizado para altera/criar recursos.
+   */
+
+   /**
+    * Banco de Dados (Usaremos o banco de dados SQLite):
+    * 
+    * SQL: MySQL, SQLite, PostgresSQL, Oracle, SQL Server (Linguagem universal)
+    * NoSQL: MongoDB, CouchDB..... (Cada Banco tem sua linguagem)
+    */
+
+    /**
+     * Comunicação com os Bancos de Dados:
+     * 
+     * Driver: SELECT * FROM users
+     * Query Builder: table('users').select('*').where() [Utiliza a linguagem JS, utilizaremos essa abordagem com a lib KNEX]
+     * para inicializar o knex (npx knex init)
+     * 
+     */
+
+
+
+     ########################################################################
+
+     Banco de Dados:
+
+     Entidades:
+        - ONG
+        - Caso(incident)
+
+    Funcionalidades:
+        - Login ONG
+        - Logout ONG
+        - Cadastrar ONG
+        - Cadastrar novos caso
+        - Deletar Casos
+        - Listar casos específicos por ONG
+        - Listar todos os casos
+        - Entrar em contato com a ONG
+
+
+    TODA A TABELA NOVA DO BANCO É UMA NOVA MIGRATE, OU SEJA, SEMPRE QUE TIVER
+    UMA TABELA NOVA TEM QUE TER OUTRA MIGRATE [ npx knex migrate:make create_incidents ]
+
+    Para rodar a sua migratin npx knex migrate:latest
+    Para deletar(rodar o metodo DOWN) a sua última migration npx knex migrate:rollback
+    Para saber todas as suas migrations que foram executadas npx knex migrate:status
